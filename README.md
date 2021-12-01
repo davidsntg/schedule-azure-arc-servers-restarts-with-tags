@@ -32,6 +32,9 @@ You can provide multiple days but they must be **comma separated**.
 * Server3 - `POLICY_RESTART= Wednesday,Saturday;07:30 AM` will be restarted every Wednesday and Saturday at 07:30 AM.
 * Server4 - `POLICY_RESTART= Friday;04:00 AM` will be restarted every Friday at 04:00 AM.
 
+Portal screenshot:
+![TagExample](docs/tagexample.png)
+
 ## Prerequisites
 
 Automation Account must have the following modules installed:
