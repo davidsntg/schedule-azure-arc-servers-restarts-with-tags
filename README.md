@@ -46,10 +46,15 @@ Automation Account must have the following modules installed:
 ## Runbooks details
 
 There is a set of 3 Runbooks that must be deployed in the Automation Account:
-* **ArcServers-ScheduleRestartWithTags**: Must be scheduled (at least) daily. Searches for all machines with the `POLICY_RESTART` tag and creates reboot schedules with *ArcServers-RestartMachine* Runbook.
-* **ArcServers-RestartMachine**: Restarts a given Azure ARC Server. To perform the restart, the runbook deploy a CustomScript (*linux* machines) or CustomScriptExtension (*windows* machines) extensions on Azure ARC Server.
-* **ArcServers-CleanUpCustomScriptExtension**: Must be scheduled (at least) daily. Removes old CustomScript (*linux* machines) or CustomScriptExtension (*windows* machines) extensions on Azure ARC Servers.
-  
+* `ArcServers-ScheduleRestartWithTags` must be scheduled (at least) daily. Searches for all machines with the `POLICY_RESTART` tag and creates reboot schedules with *ArcServers-RestartMachine* Runbook.
+* `ArcServers-RestartMachine` restarts a given Azure ARC Server. To perform the restart, the runbook deploy a CustomScript (*linux* machines) or CustomScriptExtension (*windows* machines) extensions on Azure ARC Server.
+* `ArcServers-CleanUpCustomScriptExtension` must be scheduled (at least) daily. Removes old CustomScript (*linux* machines) or CustomScriptExtension (*windows* machines) extensions on Azure ARC Servers.
+
+Portal screenshot when Runbooks are deployed to the Automation Account:
+![TagExample](docs/automationaccount.png)
+
+**Remember**: `ArcServers-ScheduleRestartWithTags` and `ArcServers-CleanUpCustomScriptExtension` Runbooks must be scheduled **daily**.
+
 # Authors
 
 [David Santiago](https://github.com/dawlysd) & [Nicolas Ghirardi](https://www.linkedin.com/in/nicolas-ghirardi-11090235) 
